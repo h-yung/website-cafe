@@ -22,7 +22,7 @@ The order form is supported by JavaScript, which enables the following:
 * Fully responsive, with unique behaviors for desktop vs. mobile around hover effects and the gallery page.
 
 ## Optimizations
-* Explore further possibilities with CSS: CSS grid layout, animations, scrolling-triggered behaviors, and actual parallax effects. Add lightbox approach to the gallery and for any ad hoc promotional alerts.
+* Explore further possibilities with CSS: CSS grid layout, animations, scrolling-triggered behaviors, and actual parallax effects. Add lightbox to the gallery and for any ad hoc promotional alerts.
 * Smooth out or update of the current effects (likely through the above approaches): The offset of the main page when the menu is present, and the intro section behavior on mobile for the gallery page.
 * Addressing less-optimal design around the order form-menu width for widescreen.
 * Modularize the CSS styles and classes.
@@ -36,6 +36,7 @@ Considerations: Data from the order form currently reflects only the customer ch
 
 ## Lessons learned
 * Shift-out menu effect was a success - and nearly 100% CSS driven. It'll be worth trying to reduce use of JavaScript for purely styling purposes.
+* Getting comfortable with changing z-index for styling. 
 * Order form: For a larger product list, I could see this rebuilt to make an API call for the necessary data. The intermediate step of storing data into an objects array would still be helpful considering the asynchronous nature of .fetch() - learned the hard way through the earlier Memory Challenge project (see below).
 * Pageload speed: Large visual files impact this significantly. I've resized them as much as possible without compromising the experience, but there should be better solutions around file compression). For another website/business with less photography, visual interest could be added with animation, visuals in SVG format, offset color blocking (see: grid) again.
 * JavaScript query selectors: A lot of this went on for the dynamically generated menu. I would like to better understand what's best practices around selectors here.
