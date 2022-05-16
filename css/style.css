@@ -1,0 +1,894 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.wrapper {
+     display:flex;
+}
+
+.brand {
+     font-family: 'Petit Formal Script', cursive;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+     scroll-behavior: smooth;
+}
+
+p {
+     margin-bottom: 1rem;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+     font-weight: bold;
+}
+
+h1 {
+     font-size: 1.5rem;
+     margin-bottom: 1.2em;
+}
+
+h2 {
+     font-size: 2rem;
+}
+
+h3 {
+     font-size: 1.1rem;
+}
+a {
+     text-decoration: none;
+}
+
+.mini {
+     text-transform: uppercase;
+     letter-spacing: 0.2em;
+     margin-bottom: 1rem;
+}
+
+.cta {
+     padding: 0.5rem 1rem;
+     background:rgba(71, 65, 65, 0.726);
+     color: white;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     letter-spacing: 0.2em;
+     text-transform: uppercase;
+     border-radius: 2rem;
+     border: 2px solid rgba(71, 65, 65, 0);
+     margin-bottom: 2rem;
+}
+
+.cta.primary {
+     padding: 1rem 2rem;
+}
+
+.cta:hover {
+     border-color: rgba(71, 65, 65, 0.726);
+     background: white;
+     color: rgba(71, 65, 65, 0.726);
+} 
+
+.cta.disabled {
+     border: 2px solid rgba(71, 65, 65, 0);
+     border-color: white;
+     background: lightgray;
+     color: white;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+     position: relative;
+}
+
+body > section {
+     border-radius: 0 0 5rem 0;
+}
+
+header,
+header > * {
+     background: white;
+     height: 4rem;
+     width: 100%;
+     position: fixed;
+     z-index: 3;
+
+}
+
+#burgerMenu {
+     z-index: 3; /*above subsequent elements*/
+     width: 2rem;
+     height: 2rem;
+     display: block;
+     border: none;
+     padding: 0;
+     position: fixed;
+     top: 1rem;
+     margin: 0 1rem;
+     background: linear-gradient(
+          to bottom, 
+          rgba(71, 65, 65, 0.726), rgba(71, 65, 65, 0.726) 20%, 
+          rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 40%, 
+          rgba(71, 65, 65, 0.726) 40%, rgba(71, 65, 65, 0.726) 60%, 
+          rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 80%, 
+          rgba(71, 65, 65, 0.726) 80%, rgba(71, 65, 65, 0.726) 100%
+        );
+}
+
+#burgerMenu:hover {
+     opacity: 0.7;
+     cursor: pointer;
+}
+
+/* #burgerMenu:active {
+     color: white;
+     transform: rotateZ(180deg);
+} */ 
+
+#burgerMenu > nav {
+     /* flex container */
+     z-index: 3; /*above*/
+     visibility: hidden;
+     position: fixed;
+     top: 0;
+     left: -20rem;  /*width*/
+     width: 18rem;
+     height: 100%; 
+     background-color: rgba(71, 65, 65, 0.726);
+     color: white;
+     letter-spacing: 0.1em;
+     flex-direction: column;
+     transition: all 0.3s ease-in 0s;
+}
+
+#burgerMenu > nav > * {
+     line-height: 1.5rem;
+}
+
+#burgerMenu > nav a {
+     display:block;
+     padding: 2rem;
+     color: white;
+     font-size: 1.2rem;
+}
+
+#burgerMenu > nav span,
+#burgerMenu > nav h3 {
+     padding-left: 1rem;
+}
+
+#burgerMenu > nav h3 {
+     margin-top: 4rem;
+     margin-bottom: 0;
+}
+
+#burgerMenu > nav h3 + span {
+     margin-bottom: 1rem;
+}
+
+#burgerMenu > nav a:hover,
+#burgerMenu > nav a:active {
+     color: rgba(71, 65, 65, 1);
+     font-weight: bold;
+     background: white;
+}
+
+#burgerInput {
+     visibility: hidden;
+     position: absolute; /*otherwise weird header margins*/
+}
+
+#burgerInput:checked + #burgerMenu > nav {
+     visibility:visible;
+     left: 0;
+}
+
+.overlay { /*for ref*/
+     visibility: hidden;
+     opacity: 0;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%; /*cover entire screen*/
+     height: 100%;
+     transition: opacity .35s, visibility .35s, height .35s;
+     overflow: hidden;
+     background: black;
+     z-index: 0; /*put behind nav but above other elements*/
+}
+
+#hero {
+     background: linear-gradient(0.50turn, #fff, rgba(255, 255, 255, 0)), url("../images/top_order-tea.jpg");
+     background-position: bottom;
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+     background-attachment:fixed;
+     height: 43rem;
+     padding: 4rem 5rem 2rem 5rem;
+     flex-direction: column;
+     justify-content: center;
+}
+
+#name span {
+     position: fixed;
+     top: 1.3rem;
+     font-size: 1.5rem;
+     letter-spacing: 0.2em;
+     z-index: 3; /*above subsequent elements*/
+     /* flex container */
+}
+
+#hero > section:nth-of-type(2) {
+     margin-top: 0.3em;
+     margin-bottom: 0.4em;
+     width: 100%;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+section.emph {
+     padding: 2.5rem;
+     border-radius: 5rem 0 5rem 0;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     color: white;
+     background: rgba(71, 65, 65, 0.726);
+     transition: all 0.5s ease-out 0s;
+}
+
+section.emph:hover {
+     background: rgba(71, 65, 65, 0.85);
+}
+
+figcaption {
+     /* font-family: serif;
+     font-size: 1.2rem; */
+     font: italic 1.2rem serif;
+}
+
+#hero section.emph {
+     height: 10rem;
+}
+
+#hero section.emph li {
+     margin-bottom: 0.5rem;
+}
+
+#hero h2 {
+     font-size: 6rem;
+     line-height: 0.7em;
+     width: 50%;
+     color: rgba(21, 19, 19, 0.658);
+     transition: all 0.5s ease-out 0.1s;
+}
+#hero h2:hover {
+     letter-spacing: 0.2rem;
+     color: white;
+     opacity: 0;
+}
+
+#new {
+     padding: 2rem;
+}
+
+#new > section:first-child {
+     flex-direction: column;
+     align-items: center;
+}
+
+#new h2,
+#reviews h2 {
+     color: black;
+     letter-spacing: 0.1em;
+     font-style: italic;
+     margin-bottom: 2rem;
+}
+
+
+.featContainer {
+     width: 100%;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+
+.feat {
+     height: 15rem;
+     border-radius: 5em 0 5em 0;
+     width: 25%;
+     /* min-width: 20rem; */
+     margin: 0.5rem;
+     filter:brightness(60%);
+     transition: all 0.4s ease-out 0s;
+}
+
+.feat:hover{
+     filter:brightness(1);
+     cursor: pointer;
+}
+
+
+#feat1 {
+     background: url(../images/applehoneycake.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat2 {
+     background: url(../images/brownbutterfinanciers.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat3 {
+     background: url(../images/cinnamonsugarsourdoughpretzel.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat4 {
+     background: url(../images/cranberrysourdough.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat5 {
+     background: url(../images/cinnamon-spicedpeach-sliceroseinside-a-honey-vanillacrust.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat6 {
+     background: url(../images/purplesweetyamcrepes.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat7 {
+     background: url(../images/matchacrepecake-freshchurnedhojichaice.jpg) no-repeat;
+     background-size: cover;
+}
+
+#feat8 {
+     background: url(../images/levainstylecookies.jpg) no-repeat;
+     background-size: cover;
+}
+
+.featDetail {
+     z-index: 1;
+     display: none;
+     position: absolute;
+     right: -50rem;
+     width: 45rem; /*cover entire screen*/
+     min-height: 40rem;
+     margin-right: 2rem;
+     transition: opacity .35s, visibility .35s, height .35s;
+     overflow: hidden;
+}
+
+.featDetail:hover{
+     cursor: pointer;
+}
+
+.featDetail img {
+     width: 100%;
+     height: auto;
+     border-radius: 3.5rem 0 0 0;
+     margin-bottom: 1rem;
+     /* border-radius: 5rem 0 5rem 0; */
+}
+
+#reviews {
+     /* flex container */
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 2rem 5rem;
+     /* background: rgb(226, 233, 236); */
+     background: linear-gradient(0.50turn, #fff, rgba(255, 255, 255, 0)), url(../images/bannerbkg_3.jpg);
+     background-position: bottom;
+}    
+
+#reviews section:first-of-type {
+     justify-content: center;
+}
+
+/* toggles for carousel */
+#reviews section:first-of-type > * {
+     color: rgba(71, 65, 65, 0.726);
+     margin: 0.5rem;
+     font-size: 2rem;
+     transition: all 0.3s ease-out 0s;
+}
+
+#reviews section:first-child > *:hover {
+     color: white;
+}
+
+#reviews section:last-child {
+     /* flex container */
+     flex-direction: column;
+     align-items: center;
+     padding: 2rem 5rem;
+     width: 60%;
+     text-align: center;
+     border-radius: 1rem;
+     background: white;
+}
+
+#bkwd {
+     transform: rotateZ(180deg);
+}
+
+#reviews img{
+     border-radius: 50%;
+     width: 10rem;
+     height: 10rem;
+     margin-bottom: 2rem;
+}
+
+#reviews span {
+     margin-bottom: 1rem;
+}
+
+footer {
+     /* flex container */
+     color:rgba(71, 65, 65, 1);
+     padding: 2rem 5rem;
+}
+
+footer ul {
+     margin: 0 1rem 1rem 0;
+}
+
+footer ul a {
+     color: rgba(71, 65, 65, 1);
+     margin-right: 1rem;
+}
+
+footer ul a:hover {
+     opacity: 0.7;
+}
+
+
+/**************************************
+ORDERS PAGE
+**************************************/
+#hero.order {
+     background: linear-gradient(0.50turn, #fff, rgba(255, 255, 255, 0)), url("../images/top_walnutlinzercookie-apricotjam.jpg");
+     background-position: top;
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+     background-attachment:fixed;
+     height: 25rem;
+     padding: 4rem 5rem 2rem 5rem;
+     flex-direction: column;
+     justify-content: center;
+}
+
+#hero.order + section {
+     /* flex container */
+     justify-content: space-between;
+     padding:2rem 5rem;
+     border-radius: 0;
+}
+
+section.list,
+#summary {
+     /* flex container */
+     flex-direction: column;
+     padding: 2rem;
+}
+
+section.list h2,
+#summary h2 {
+     margin-bottom: 1em;
+}
+
+section.list li {
+     /* flex container */
+     padding: 0.5rem 0;
+}
+
+section.list select {
+     padding: 0.5rem 0;
+}
+
+section.list li:first-child {
+     font-weight: bold;
+     font-size: normal;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     border-bottom: 1px solid black;
+}
+
+/* item name alignment */
+section.list li > span:first-child {
+     margin-right: 3rem;
+     width: 12rem;
+}
+
+section.list li > section {
+     /* flex container */
+     justify-content: space-between;
+     width: 10rem;
+}
+
+section.list li span:first-child section {
+     /* flex container */
+     justify-content: flex-start;
+     width: 8rem; /* width of second column */
+}
+
+#summary {
+     /* flex container */
+     flex-shrink: 1;
+     /* min-height: 40rem; */
+     background: hsla(24, 38%, 95%, 0.832);
+     font-size: larger;
+     border-radius: 1rem;
+     transition: all 0.5s ease-out 0.1s;
+}
+
+#summary:hover {
+     background: hsla(24, 38%, 95%, 1);
+     /* box-shadow: 0.5rem 0.5rem 2rem rgb(189, 183, 183); */
+}
+
+/* summary list */
+#summary ul{
+     /* flex container */
+     flex-direction: column;
+     width: 100%;
+}
+
+#summary ul li {
+     /* flex container */
+     justify-content: space-between;
+     padding-bottom: 0.5rem;
+     font-size: smaller;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#summary ul li span:first-of-type {
+     margin-right: 2rem;
+}
+
+/* subtotal styling */
+#summary ul li:last-child {
+     padding-top: 0.5rem;
+     font-weight: bold;
+     font-size: normal;
+     text-align: end;
+     border-top: 1px solid black;
+}
+
+#summary .cta {
+     max-width: 17rem;
+}
+
+#summary + section {
+     /* flex container */
+     flex-direction: column;
+     font-style: italic;
+     margin: 3rem 2rem;
+}
+
+#summary + section p {
+     margin-bottom: 1rem;
+}
+
+
+/******************************************
+/* gallery
+/*******************************************/
+
+#hero.gallery {
+     background: linear-gradient(0.50turn, #fff, rgba(255, 255, 255, 0)), url("../images/fresh-baked.jpg");
+     background-size: cover;
+     background-attachment: fixed;
+     background-position: bottom;
+
+}
+
+.feat.small,
+.feat.double {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     color: white;
+     /* font-weight: bold; */
+     letter-spacing: 0.2rem;
+}
+
+.feat.intro.small {
+     width: 80%;
+}
+
+.feat h3 {
+     font-style: italic;
+     font-size: 2rem;
+     line-height: 0.7em;
+     margin: 1em 1rem;
+     transition: all 0.5s ease-out 0.2s;
+}
+
+.feat p {
+     margin: 1rem;
+}
+
+.feat h3:hover {
+     opacity: 0;
+     letter-spacing: 3rem;
+}
+
+.feat.small {
+     width: 15rem;
+     cursor:default;
+}
+
+.feat.double {
+     height: 30rem;
+     background-attachment: fixed;
+     cursor:default;
+}
+
+.featContainer section.wrapper {
+     flex-direction: column;
+}
+
+section.one {
+     background: url(../images/blossoms.jpg) no-repeat;
+     background-size: cover;
+}
+
+section.two {
+     background: url(../images/saltpicklingcherryblossoms.jpg) no-repeat;
+     background-size: cover;
+}
+
+section.three {
+     background: url(../images/sakura-ume-jelly.jpg) no-repeat;
+     background-size: cover;
+}
+
+section.four {
+     background: url(../images/minipies.jpg) no-repeat;
+     background-size: cover;
+     background-position: top;
+}
+
+section.five {
+     background: url(../images/order-cookies.jpg) no-repeat;
+     background-size: cover;
+     background-position: top right;
+}
+
+section.six {
+     background: url(../images/pexels-photo-6794615.jpeg) no-repeat;
+     background-size: cover;
+}
+
+section.seven {
+     background: url(../images/bannerbkg_3.jpg) no-repeat;
+     background-size: cover;
+     background-position: bottom right;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.shift {
+     position: relative;
+     left: 18rem;
+     width: 80%;
+}
+
+.restore {
+     right: 0rem;
+     display: inherit; /*work out a way to have element slide in without shift complications*/
+}
+
+
+@media screen and (max-width:1360px) and (min-width:1060px){
+     .feat {
+          width: 45%;
+     }
+     .featDetail {
+          width: 60%;
+          /* height: 25rem; */
+          margin: 0;
+          position: fixed;
+          top: 5%;
+     }
+}
+
+@media screen and (max-width:1059px) and (min-width:481px){
+     #hero.order + section {
+          flex-direction: column;
+     }
+     #hero.order + section section.list {
+          width: 100%;
+          font-size: larger;
+     }
+     #summary {
+          min-height: 0;
+     }
+     section.list li {
+          justify-content: space-between;
+     }
+     section.list li span:first-child {
+          width: 50%;
+     }
+}
+
+
+@media screen and (max-width:480px){
+
+     /*fix burger menu shift that happens on desktop - toggle targeting it specifically?*/
+     #burgerInput:checked ~ .overlay {  /*only in effect for mobile*/
+          visibility:visible;
+          opacity: 0.7;
+     }
+
+     #hero {
+          padding: 5rem 0 0 0;
+          background: linear-gradient(0.50turn, #fff, rgba(255, 255, 255, 0)), url("../images/top_order-tea.jpg");
+          background-size: cover;
+          height: 100%;
+     }
+
+     #name {
+          padding-left: 4rem;
+     }
+
+     #hero span {
+          font-size: 1rem;
+     }
+
+     #hero > section:nth-of-type(2) {
+          margin-top: 0.3em;
+          margin-bottom: 0.4em;
+          width: 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+     }
+
+     #hero h2 {
+          font-size: 4rem;
+          width: 95%;
+          height: 50%;
+          margin: 4rem 1rem;
+     }
+
+     #hero h2:hover {
+          letter-spacing: normal;
+          color: rgba(71, 65, 65, 1);
+          opacity: 1;
+     }
+
+     #hero section.emph {
+          position: relative;
+          top: 0.5rem; /*line up with bottom of hero*/
+     }
+
+     .feat {
+          width: 100%;
+     }
+
+     .featDetail {
+          width: 100%;
+          min-height: 0;
+          height: 25rem;
+          margin: 0;
+          position: fixed;
+          top: 20%;
+     }
+
+     #reviews {
+          padding: 2rem 1rem 8rem 1rem;
+     }
+     #reviews section:last-child{
+          width: 100%;
+          padding: 2rem;
+     }
+
+     /* REVIEWS change toggle to swipe action */
+
+     footer {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+     }
+
+     /* orders */
+     #hero.order + section {
+          flex-direction: column;
+          padding: 0;
+     }
+
+     #hero.order + section section.list {
+          padding: 1rem;
+     }
+
+     section.list li:first-child span:last-child {
+          /* no room to view */
+          display: none;
+     }
+     section.list li:first-child {
+          justify-content: space-between;
+     }
+
+     section.list li > span:first-child {
+          width: 100%;
+     }
+
+     section.list li {
+          padding: 1rem 0;
+          font-size: larger;
+     }
+
+     section.list li:active,
+     section.list li:hover {
+          background: hsla(24, 38%, 95%, 0.832);
+     }
+
+     section.list li section {
+          flex-direction: column;
+          align-items: center;
+     }
+
+     section.list li section span:first-child {
+          font-size: smaller;
+     }
+
+     select {
+          font-size: larger;
+          margin-top: 1rem;
+     }
+
+     /* gallery */
+     #new.gallery {
+          padding: 2rem 0;
+     }
+     .feat.small,
+     .feat.double {
+          width: 100%;
+          margin: 0;
+     }
+
+     .feat.small:active,
+     .feat.double:active {
+          height: 30rem;
+          width: 100%;
+     }
+
+     .intro.feat.double {
+          height: 15rem;
+     }
+
+     .featContainer.gallery,
+     .featContainer.gallery section:last-child {
+          flex-direction: column;
+     }
+
+
+}
+

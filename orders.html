@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://kit.fontawesome.com/9346d5df99.js" crossorigin="anonymous"></script>
+
+		<title>Order pickup: Idyll Cafe &amp; Bakery</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet"> 
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">  
+		<!-- change above to reset -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<!-- burger menu, dropdown in desktop, full screen in mobile -->
+			<input type="checkbox" id="burgerInput" class="mobile">
+			<label id="burgerMenu" for="burgerInput" class="mobile">
+				<nav class="mobile wrapper">
+					<a id='goBack' href="index.html">Return home</a> 
+					<a id='goNew' href="index.html#new">New this month</a> <!--featured below--> 
+					<a id='goReview' href="index.html#reviews">Reviews</a>
+					<a id='goAbout' href="gallery.html">Our pastries</a> 
+					<!--contact-->
+					<h3 class="mini">Contact</h3>
+					<span>(212) 000-0000</span>
+					<span>41X E 12 St</span>
+					<span> New York, NY 10009</span>
+					<span>hello@idyll.cafe</span>
+				</nav>
+			</label>
+			<div class="overlay"></div>
+		</header>
+		<section id="hero" class="order wrapper">
+			<section id="name" class="wrapper">
+				<span>idyll Cafe &amp; Bakery</span>
+			</section>
+			<section class="wrapper">
+				<h2>Order pickup</h2>
+			</section>
+		</section>
+		<section class="wrapper">
+			<section class="wrapper list">
+				<h2>Menu</h2>
+				<ul id="itemList">
+					<li class="wrapper">
+						<span>Item</span>
+						<section class="wrapper">
+							<span>Price</span>
+							<span>Select</span>
+						</section>
+					</li>
+				</ul>
+			</section>
+			
+			<section > <!--subsection-->
+				<section id="summary" class="wrapper">
+					<h2>Order Summary</h2>
+					<button id="sumUp" class="cta">Update order</button>
+					<ul class="wrapper"></ul>
+					<button id="checkout" class="cta disabled">Checkout</button>
+				</section>
+				<section class="wrapper"> <!--fine print-->
+					<p>All items shown here can also be ordered on location, while several items, including our selection of teas, coffees, and drinks, must be ordered or consumed on location at the cafe.</p>
+					<p>For orders larger than the dropdown options, please give us a call during our opening hours at least 48 hours in advance.</p>
+					<small>&ast;Taxes and other charges may apply and will be calculated prior to order confirmation.</small>
+				</section>
+			</section>
+		</section>
+
+		
+		<footer class="wrapper">
+			<ul class="wrapper social">
+				<li><a href="##"><i class="fa-brands fa-instagram"></i></a></li>
+				<li><a href="##"><i class="fa-brands fa-facebook-f"></i></a></li>
+				<li><a href="##"><i class="fa-brands fa-twitter"></i></a></li>
+			</ul>
+			<p>Idyll Cafe &vert; Built by Least Common Multiple</p>
+		</footer>
+		<script type="text/javascript" src="js/orders.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
