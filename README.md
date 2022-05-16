@@ -1,5 +1,5 @@
 # Idyll Cafe website
-A responsive website for a cafe, built from scratch and including an order form that does simple calculations.
+A responsive website for a cafe, built from scratch and including an order form that does simple calculations and creates a temporary record of the data.
 
 **Demo**: https://idyll-cafe.netlify.app/
 
