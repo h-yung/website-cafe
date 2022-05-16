@@ -26,8 +26,9 @@ The order form is supported by JavaScript, which enables the following:
 * Addressing less-optimal design around the order form-menu width for widescreen.
 * Get some customer feedback!
 * Predictive/semi-personalized promotions (especially in the confirmation screen post-payment processing) is probably overkill for this business but could be useful elsewhere for different products and services that would want to promote email newsletter signups, integrations for RSS feed, and events.
+* The Reviews section is not fully built out but, with more time, I'd approach with a typical carousel/sliding effect for desktop and experiment with changing it to on-swipe behavior for mobile.
 
-As always, refactoring to bring the code more in line with OOP principles and to reduce pageload time.
+As always, refactoring to bring the code more in line with OOP principles and to reduce pageload time. 
 
 Considerations: Data from the order form currently reflects only the customer choice of products and would pass this on to a payment platform, but it's worth checking how secure it needs to be and in what formats.
 
@@ -35,6 +36,7 @@ Considerations: Data from the order form currently reflects only the customer ch
 * Shift-out menu effect was a success - and nearly 100% CSS driven. It'll be worth trying to reduce use of JavaScript for purely styling purposes.
 * Order form: For a larger product list, I could see this rebuilt to make an API call for the necessary data. The intermediate step of storing data into an objects array would still be helpful considering the asynchronous nature of .fetch() - learned the hard way through the earlier Memory Challenge project (see below).
 * Pageload speed: Large visual files impact this significantly. I've resized them as much as possible without compromising the experience, but there should be better solutions around file compression). For another website/business with less photography, visual interest could be added with animation, visuals in SVG format, offset color blocking (see: grid) again.
+* JavaScript query selectors: A lot of this went on for the dynamically generated menu. I would like to better understand what's best practices around selectors here.
 
 Some question remains around why condensing the JavaScript files (e.g., moving what's in orders.js into main.js) causes errors.
 
