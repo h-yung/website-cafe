@@ -13,7 +13,7 @@ The initial site was built off another developer's templates, which were complic
 I built the next (current) version from the ground up to be a lightweight, static website that would meet the need just as well, taking advantage of what modern CSS can offer for enhancements.
 
 The order form is supported by JavaScript, which enables the following:
-* Dynamically generates the order menu based on product information (stored as an array of objects)
+* Dynamically generates the order menu based on product information (stored as an array of objects).
 * Calculates and presents an estimate of the total cost to the customer, which can be edited. The checkout option is enabled only after a nonzero selection is made.
 * Captures the customer selection in an array of objects that can then be passed for payment processing.
 
