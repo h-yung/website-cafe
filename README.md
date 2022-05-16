@@ -36,7 +36,7 @@ Considerations: Data from the order form currently reflects only the customer ch
 
 ## Lessons learned
 * Shift-out menu effect was a success - and nearly 100% CSS driven. It'll be worth trying to reduce use of JavaScript for purely styling purposes.
-* Getting comfortable with changing z-index for styling. 
+* Getting comfortable with using z-index (and keeping track) for styling. 
 * Order form: For a larger product list, I could see this rebuilt to make an API call for the necessary data. The intermediate step of storing data into an objects array would still be helpful considering the asynchronous nature of .fetch() - learned the hard way through the earlier Memory Challenge project (see below).
 * Pageload speed: Large visual files impact this significantly. I've resized them as much as possible without compromising the experience, but there should be better solutions around file compression). For another website/business with less photography, visual interest could be added with animation, visuals in SVG format, offset color blocking (see: grid) again.
 * JavaScript query selectors: A lot of this went on for the dynamically generated menu. I would like to better understand what's best practices around selectors here.
