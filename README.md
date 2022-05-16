@@ -8,7 +8,7 @@ A responsive website for a cafe, built from scratch and including an order form 
 ## How it's made
 **Tech used:** HTML, CSS, JavaScript.
 
-The initial site was built off another developer's templates, which were complicated to debug and likely built before some current CSS behaviors/capabilities became available.
+The initial site was built off another developer's templates, which were complicated to debug and likely predated some current CSS behaviors/capabilities became available.
 
 I built the next (current) version from the ground up to be a lightweight, static website that would meet the need just as well, taking advantage of what modern CSS can offer for enhancements.
 
@@ -22,7 +22,7 @@ The order form is supported by JavaScript, which enables the following:
 * Fully responsive, with unique behaviors for desktop vs. mobile around hover effects and the gallery page.
 
 ## Optimizations
-* Explore further possibilities with CSS: CSS grid layout, animations, and actual parallax effects. Add lightbox approach to the gallery and for any ad hoc promotional alerts.
+* Explore further possibilities with CSS: CSS grid layout, animations, scrolling-triggered behaviors, and actual parallax effects. Add lightbox approach to the gallery and for any ad hoc promotional alerts.
 * Smooth out or update of the current effects (likely through the above approaches): The offset of the main page when the menu is present, and the intro section behavior on mobile for the gallery page.
 * Addressing less-optimal design around the order form-menu width for widescreen.
 * Modularize the CSS styles and classes.
