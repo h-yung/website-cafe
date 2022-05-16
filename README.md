@@ -24,6 +24,7 @@ The order form is supported by JavaScript, which enables the following:
 * Explore further possibilities with CSS: CSS grid layout, animations, and actual parallax effects. Add lightbox approach to the gallery and for any ad hoc promotional alerts.
 * Smooth out or update of the current effects (likely through the above approaches): The offset of the main page when the menu is present, and the intro section behavior on mobile for the gallery page.
 * Addressing less-optimal design around the order form-menu width for widescreen.
+* Modularize the CSS styles and classes.
 * Get some customer feedback!
 * Predictive/semi-personalized promotions (especially in the confirmation screen post-payment processing) is probably overkill for this business but could be useful elsewhere for different products and services that would want to promote email newsletter signups, integrations for RSS feed, and events.
 * The Reviews section is not fully built out but, with more time, I'd approach with a typical carousel/sliding effect for desktop and experiment with changing it to on-swipe behavior for mobile.
