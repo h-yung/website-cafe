@@ -6,10 +6,10 @@ let products = [
     {id:"e", sale: true, name: 'New: Brown butter financiers (2 per order)', price:6.75},
     {id:"f", sale: true, name: 'New: Cinnamon sugar-dusted sourdough pretzel', price:`4.10`},
     {id:"g", sale: true, name: 'New: Cranberry sourdough (1/4 loaf)', price:`3.50`},
-    // {id:"h", sale: false, name: 'New: Cinnamon-peach rose galette', price:8.75},
-    // {id:"i", sale: false, name: 'Chocolate raspberry galette', price:`6.50`},
-    // {id:"j", sale: false, name: 'New: Purple sweet yam crepes', price:`8.50`},
-    // {id:"k", sale: false, name: 'Pear-ginger and elderflower crepes', price:`9.00`},
+    {id:"h", sale: false, name: 'New: Cinnamon-peach rose galette', price:8.75},
+    {id:"i", sale: false, name: 'Chocolate raspberry galette', price:`6.50`},
+    {id:"j", sale: false, name: 'New: Purple sweet yam crepes', price:`8.50`},
+    {id:"k", sale: false, name: 'Pear-ginger and elderflower crepes', price:`9.00`},
     {id:"l", sale: true, name: 'Blueberry and havarti sourdough sandwich', price:`11.50`},
     {id:"m", sale: true, name: 'Creme brulee madeleines (3 per order)', price:7.25},
     {id:"n", sale: true, name: 'Yuzu madeleines (3 per order)', price:`7.00`},
@@ -21,6 +21,7 @@ let products = [
     {id:"t", sale: true, name: 'Hazelnut praline tart', price:4.25},
 ]
 
+// will contain the selected items and quantities
 let currentOrder = [];
 
 /*************
@@ -50,7 +51,7 @@ function makeMenu(){
         unitPrice.textContent = item.price;
         document.querySelector(`#${item.id} section`).appendChild(unitPrice)
     
-        if (item.sale = true){
+        if (item.sale === true){
             // create select
             const select = document.createElement('select')
             select.id = `${item.id}Count`
@@ -68,13 +69,12 @@ function makeMenu(){
                 option.textContent = `${i}`;
                 document.querySelector(`#${item.id} section select`).appendChild(option)
             }
-            
-        }else if (item.sale = false){
+        }else if (item.sale === false){
             // cafe only specification
             const cafeOnly = document.createElement('span')
+            cafeOnly.style.fontSize = 'smaller'
             cafeOnly.textContent = 'Cafe only'
             document.querySelector(`#${item.id} section`).appendChild(cafeOnly)
-
         }
     }
 
@@ -85,15 +85,13 @@ function makeMenu(){
  CALCULATIONS
  * ********* */
 
- // could have been more effective to create another array of objects
 const sumUp = document.querySelector('#sumUp')
-sumUp.addEventListener('click', calcTotal)
-
+sumUp.addEventListener('click', calcTotal) 
+//could rewrite to call calc upon 'change' for each select dropdown as a running tally, but that seems less efficient than the setup currently enabled by the naming schema
 function calcTotal(){
     document.querySelector('#summary ul').replaceChildren()
     let total = 0;
-    const arr = ['a','b','c','d','e','f','g','l','m','n','o','p','q','r','s','t']
-    // h-k null, omitted for now but should include
+    const arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t']
     for (const letter of arr){
         total+= calcSubTotal(letter)
     }
@@ -122,11 +120,14 @@ function calcTotal(){
 
 // where itemLetter = lowercase letter as string for select parents. 
 function calcSubTotal(itemLetter){
-    let count = document.querySelector(`#${itemLetter}Count`).value
+    let count;
+    if (document.querySelector(`#${itemLetter}Count`)){
+        count = document.querySelector(`#${itemLetter}Count`).value
+    }
     let price = document.querySelector(`#${itemLetter}Price`).textContent
     let subtotal = 0;
     let subtotalShown;
-    if (count !=="--"){
+    if (count && count !=="--"){
         subtotal = +count * +price
         // console.log(`Count for item is ${count}`)
         // console.log(`${count} x ${price}`)
@@ -140,10 +141,8 @@ function calcSubTotal(itemLetter){
         subtotalShown = String(subtotal) + "0"
     } 
 
-        // insert element creation for summary
-        // REWRITE TO REFERENCE THE OBJECT
-    
-    if (count !== '--'){
+        //element creation for summary    
+    if (count && count !== '--'){
         const chosen = document.createElement('li');
         chosen.classList.add('wrapper');
         document.querySelector('#summary ul').appendChild(chosen);
@@ -164,6 +163,5 @@ function calcSubTotal(itemLetter){
         const ordered = {id:itemLetter, itemName, count, price, subtotal}
         currentOrder.push(ordered);
     }
-            
     return subtotal
 }
