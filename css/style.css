@@ -631,6 +631,7 @@ section.list li span:first-child section {
 
 #summary .cta {
      max-width: 17rem;
+     margin-top: 1rem;
 }
 
 #summary + section {

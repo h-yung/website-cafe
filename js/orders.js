@@ -95,10 +95,10 @@ function calcTotal(){
     for (const letter of arr){
         total+= calcSubTotal(letter)
     }
+    // for display purposes
     if (!String(total).includes(".")){
         total = String(total) + ".00"
     } else if (String(total).split('.')[1].length >=2){
-        // this is separate from the following if/else if in case it reduces to no decimal places
         total = Number.parseFloat(total).toFixed(2)
     } else if (String(total).split('.')[1].length === 1){
         total = String(total) + "0"
@@ -132,10 +132,10 @@ function calcSubTotal(itemLetter){
         // console.log(`Count for item is ${count}`)
         // console.log(`${count} x ${price}`)
     }
+    // for display purposes
     if (!String(subtotal).includes(".")){
         subtotalShown = String(subtotal) + ".00"
     } else if (String(subtotal).split('.')[1].length >= 2){
-        // this is separate from the following if/else if in case it reduces to no decimal places
         subtotalShown = Number.parseFloat(subtotal).toFixed(2)
     } else if (String(subtotal).split('.')[1].length === 1){
         subtotalShown = String(subtotal) + "0"
@@ -151,12 +151,10 @@ function calcSubTotal(itemLetter){
         const itemName = document.querySelector(`#${itemLetter} span:first-of-type`).textContent
 
         chosenSum.textContent = `${itemName} x ${count}`
-        // chosenSum.textContent = `${item.name} x ${item.count}`
         document.querySelector('#summary ul li:last-child').appendChild(chosenSum)
 
         const chosenSubtotal = document.createElement('span')
         chosenSubtotal.textContent = `$${subtotalShown}`
-        // chosenSubtotal.textContent = `${item.subtotal}`
         document.querySelector('#summary ul li:last-child').appendChild(chosenSubtotal)
 
         // place into new object and add to array for passing onwards
