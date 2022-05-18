@@ -63,7 +63,7 @@ a {
 
 .mini {
      text-transform: uppercase;
-     letter-spacing: 0.2em;
+     letter-spacing: 0.1em;
      margin-bottom: 1rem;
 }
 
@@ -395,8 +395,9 @@ figcaption {
 
 #reviews {
      /* flex container */
-     flex-direction: column;
-     justify-content: center;
+     /* flex-direction: column; */
+     /* justify-content: center; */
+     flex-wrap: wrap;
      align-items: center;
      padding: 2rem 5rem;
      /* background: rgb(226, 233, 236); */
@@ -404,46 +405,97 @@ figcaption {
      background-position: bottom;
 }    
 
-#reviews section:first-of-type {
-     justify-content: center;
+#reviews h2 {
+     width: 100%;
+     text-align: center;
 }
 
-/* toggles for carousel */
-#reviews section:first-of-type > * {
-     color: rgba(71, 65, 65, 0.726);
-     margin: 0.5rem;
-     font-size: 2rem;
+#reviews input {
+     display:none;
+}
+
+#reviews label {
+     display:initial;
+     font-size: 11rem;
+     line-height: 3rem;
+     margin-left: 1rem;
      transition: all 0.3s ease-out 0s;
 }
-
-#reviews section:first-child > *:hover {
-     color: white;
+#reviews label:hover {
+     cursor: pointer;
 }
 
-#reviews section:last-child {
+#reviews #slide-1:checked + label,
+#reviews #slide-2:checked + label,
+#reviews #slide-3:checked + label {
+     color: rgba(71, 65, 65, 0.726);
+}
+
+#reviews label:first-of-type {
+     text-align: right;
+}
+#reviews label:last-of-type {
+     text-align: left;
+}
+
+#reviews .clipper {
      /* flex container */
-     flex-direction: column;
+     /* contains the container with overflows - needs to start from left */
+     justify-content: flex-start;
+     /* a flex item in flex-direction:row in wider screens - width below ensures its own row */
+     width: 100%;
+     overflow: hidden;
+}
+
+#reviews .container {
+     /* flex container */
+     margin-left: 1rem;
+     transition: all 0.5s ease-out 0s;
+}
+
+
+/* #slide-1:checked  ~ .clipper .container {
+     margin-left: 0%;
+} */
+#slide-2:checked  ~ .clipper .container {
+     margin-left: -90%;
+}
+#slide-3:checked  ~ .clipper .container {
+     margin-left: -180%;
+}
+
+
+/* indiv reviews styles */
+.review {
+     /* flex container */
      align-items: center;
-     padding: 2rem 5rem;
-     width: 60%;
-     text-align: center;
+     margin: 1rem;
+     padding: 2rem;
+     width: 30rem;
      border-radius: 1rem;
      background: white;
 }
 
-#bkwd {
-     transform: rotateZ(180deg);
+.profile {
+     flex-direction: column;
+     text-align: center;
+     margin-right: 2rem;
 }
-
-#reviews img{
+.review img {
      border-radius: 50%;
-     width: 10rem;
-     height: 10rem;
-     margin-bottom: 2rem;
+     width: 7rem;
+     height: 7rem;
+     margin-bottom: 1rem;
 }
 
-#reviews span {
-     margin-bottom: 1rem;
+.review p {
+     margin-top: 1rem;
+}
+
+.review h3 {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-size: smaller;
+     color:rgba(71, 65, 65, 1);
 }
 
 footer {
@@ -705,7 +757,6 @@ section.seven {
      display: inherit; /*work out a way to have element slide in without shift complications*/
 }
 
-
 @media screen and (max-width:1360px) and (min-width:1060px){
      .feat {
           width: 45%;
@@ -719,7 +770,53 @@ section.seven {
      }
 }
 
-@media screen and (max-width:1059px) and (min-width:481px){
+@media screen and (max-width:1220px) and (min-width:1058px){
+     /* center the controllers */
+     #reviews label {
+          margin-left: 0;
+     }
+     #slide-1 + label {
+          text-align: right;
+          width: 42%;
+     }
+     #slide-2 + label {
+          text-align: center;
+          width: 10%;
+     }
+
+     #slide-3 + label {
+          text-align: left;
+          width: 42%;
+     }
+
+     #reviews {
+          height: 50rem;
+          overflow: hidden;
+     }
+
+     #reviews .clipper {
+          height: 100%;
+     }
+     
+     #reviews .container {
+          flex-direction: column;
+          align-items: center;
+     }
+     .review {
+          width: 80%;
+     }
+
+     #slide-2:checked  ~ .clipper .container {
+          margin-left: 0;
+          margin-top: -50%;
+     }
+     #slide-3:checked  ~ .clipper .container {
+          margin-left: 0;
+          margin-top: -100%;
+     }
+}
+
+@media screen and (max-width:1059px) and (min-width:829px){
      #hero.order + section {
           flex-direction: column;
      }
@@ -736,6 +833,102 @@ section.seven {
      section.list li span:first-child {
           width: 50%;
      }
+
+     /* center the controllers */
+     #reviews label {
+          margin: 0;
+     }
+     #slide-1 + label {
+          text-align: right;
+          width: 41%;
+     }
+     #slide-2 + label {
+          text-align: center;
+          width: 10%;
+     }
+
+     #slide-3 + label {
+          text-align: left;
+          width: 41%;
+     }
+
+     #reviews {
+          height: 50rem;
+          padding: 2rem;
+          overflow: hidden;
+     }
+
+     #reviews .clipper {
+          height: 100%;
+     }
+     
+     #reviews .container {
+          flex-direction: column;
+          align-items: center;
+          margin: 0;
+     }
+     .review {
+          width: 100%;
+     }
+
+     #slide-2:checked  ~ .clipper .container {
+          margin-left: 0;
+          margin-top: -70%;
+     }
+     #slide-3:checked  ~ .clipper .container {
+          margin-left: 0;
+          margin-top: -140%;
+     }
+}
+
+@media screen and (max-width:828px) and (min-width:481px){
+
+     /* NEXT from here: REVIEWS change toggle to swipe action */
+     /* center the controllers */
+     #reviews label {
+          margin: 0;
+     }
+     #slide-1 + label {
+          text-align: right;
+          width: 40%;
+     }
+     #slide-2 + label {
+          text-align: center;
+          width: 10%;
+     }
+
+     #slide-3 + label {
+          text-align: left;
+          width: 40%;
+     }
+     #reviews {
+          height: 50rem;
+          padding: 2rem;
+          overflow: hidden;
+     }
+
+     #reviews .clipper {
+          height: 100%;
+     }
+     
+     #reviews .container {
+          flex-direction: column;
+          align-items: center;
+          margin: 0;
+     }
+     .review {
+          width: 100%;
+     }
+
+     #slide-2:checked  ~ .clipper .container {
+          margin-left: 0;
+          margin-top: -70%;
+     }
+     #slide-3:checked  ~ .clipper .container {
+          margin-left: 0;
+          margin-top: -140%;
+     }
+
 }
 
 
@@ -805,12 +998,31 @@ section.seven {
      #reviews {
           padding: 2rem 1rem 8rem 1rem;
      }
-     #reviews section:last-child{
-          width: 100%;
-          padding: 2rem;
+
+     /* prior: REVIEWS change toggle to swipe action */
+     #slide-1 + label {
+          text-align: right;
+          width: 35%;
+     }
+     #slide-2 + label {
+          text-align: center;
+          width: 15%;
      }
 
-     /* REVIEWS change toggle to swipe action */
+     #slide-3 + label {
+          text-align: left;
+          width: 35%;
+     }
+
+     #reviews .container {
+          margin: 0;
+     }
+
+     .review {
+          flex-direction: column;
+          width: 80vw;
+     }
+
 
      footer {
           flex-direction: column;

@@ -64,4 +64,3 @@ function showRelevant(num){
     detail.querySelector('figcaption').textContent = `${featureGallery[num-1].name}: ${featureGallery[num-1].desc}`
 
 }
-// reviews carousel to come
