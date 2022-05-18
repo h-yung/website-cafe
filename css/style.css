@@ -753,7 +753,9 @@ section.seven {
 }
 
 .restore {
-     right: 0rem;
+     right: 0;
+     left:0;
+     margin:auto;
      display: inherit; /*work out a way to have element slide in without shift complications*/
 }
 
