@@ -18,8 +18,10 @@ The order form is supported by JavaScript, which enables the following:
 * Captures the customer selection in an array of objects that can then be passed for payment processing.
 
 ## Special features
+In order of earliest to most recent updates:
 * Dropdown and slide-out menu design (with thanks to some online tutorials for the initial burger menu code without the slide-out effect).
 * Fully responsive, with unique behaviors for desktop vs. mobile around hover effects and the gallery page.
+* Reviews carousel: 100% CSS, but not optimized yet for touchscreen (tablet and mobile); see below. 
 
 ## Optimizations
 * Explore further possibilities with CSS: CSS grid layout, animations, scrolling-triggered behaviors, and actual parallax effects. Add lightbox to the gallery and for any ad hoc promotional alerts.
@@ -28,7 +30,10 @@ The order form is supported by JavaScript, which enables the following:
 * Modularize the CSS styles and classes.
 * Get some customer feedback!
 * Predictive/semi-personalized promotions (especially in the confirmation screen post-payment processing) is probably overkill for this business but could be useful elsewhere for different products and services that would want to promote email newsletter signups, integrations for RSS feed, and events.
-* The Reviews section is not fully built out but, with more time, I'd approach with a typical carousel/sliding effect for desktop and experiment with changing it to on-swipe behavior for mobile.
+* Next iteration of Reviews carousel: 
+  * Change to on-swipe behavior, TBD if that will remain 100% CSS. For now, the controllers are not fully responsive but deprioritized for the smaller screen sizes, given this intended update.
+  * Dynamically create review elements.
+  * Should the reviews be semantically considered articles?
 
 As always, refactoring to bring the code more in line with OOP principles and to reduce pageload time. 
 
@@ -36,7 +41,7 @@ Considerations: Data from the order form currently reflects only the customer ch
 
 ## Lessons learned
 * Shift-out menu effect was a success - and nearly 100% CSS driven. It'll be worth trying to reduce use of JavaScript for purely styling purposes.
-* Getting comfortable with using z-index (and keeping track) for styling. 
+* Getting comfortable with using z-index and input elements for styling. Using checkboxes and radio buttons rather than JavaScript for certain behaviors is slightly less intuitive (given some selector workarounds that become necessary). 
 * Order form: For a larger product list, I could see this rebuilt to make an API call for the necessary data. The intermediate step of storing data into an objects array would still be helpful considering the asynchronous nature of .fetch() - learned the hard way through the earlier Memory Challenge project (see below).
 * Pageload speed: Large visual files impact this significantly. I've resized them as much as possible without compromising the experience, but there should be better solutions around file compression). For another website/business with less photography, visual interest could be added with animation, visuals in SVG format, offset color blocking (see: grid) again.
 * JavaScript query selectors: A lot of this went on for the dynamically generated menu. I would like to better understand what's best practices around selectors here.
