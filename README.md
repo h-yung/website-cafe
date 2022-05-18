@@ -38,7 +38,7 @@ In order of earliest to most recent updates:
 
 As always, refactoring to bring the code more in line with OOP principles and to reduce pageload time. 
 
-Considerations: Data from the order form currently reflects only the customer choice of products and would pass this on to a payment platform. I would confirm how secure it needs to be and in what formats.
+Considerations: Data from the order form currently reflects only the customer choice of products and would pass this on to a payment platform. I've assumed it doesn't need to be that secure at this stage, but haven't confirmed that.
 
 ## Lessons learned
 * Shift-out menu effect was a success - and nearly 100% CSS driven. It'll be worth trying to reduce use of JavaScript for purely styling purposes.
