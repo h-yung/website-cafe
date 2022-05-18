@@ -46,7 +46,7 @@ Considerations: Data from the order form currently reflects only the customer ch
 * Pageload speed: Large visual files impact this significantly. I've resized them as much as possible without compromising the experience, but there should be better solutions around file compression). For another website/business with less photography, visual interest could be added with animation, visuals in SVG format, offset color blocking (see: grid) again.
 * JavaScript query selectors: A lot of this went on for the dynamically generated menu. I would like to better understand what's best practices around selectors here.
 
-Some question remains around why condensing the JavaScript files (e.g., moving what's in orders.js into main.js) causes errors.
+Some question remains around why condensing the JavaScript files (e.g., moving what's in orders.js into main.js) can cause errors.
 
 ## Related projects
 **Memory Challenge:** https://github.com/h-yung/memory-challenge
