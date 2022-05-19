@@ -8,7 +8,7 @@ A responsive website for a cafe, built from scratch and including an order form 
 ## How it's made
 **Tech used:** HTML, CSS, JavaScript.
 
-The initial site was built off another developer's templates, which were complicated to debug and likely predated some current CSS behaviors/capabilities became available.
+The initial site was built off another developer's templates, which were complicated to debug and likely predated some CSS behaviors/capabilities that are now available.
 
 I built the next (current) version from the ground up to be a lightweight, static website that would meet the need just as well, taking advantage of what modern CSS can offer for enhancements.
 
