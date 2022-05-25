@@ -17,14 +17,16 @@ function menuShift(){
 // make happen
 menu.addEventListener('click', menuShift)
 
-document.querySelectorAll('.feat').forEach(element => element.addEventListener('click', handleDetail))
+document.querySelectorAll('.feat').forEach(element => element.addEventListener('click', function(e){handleDetail(e)}))
 
 // hide again on click
 // this will throw error when order form is running as that page does not have .featDetail
 const detail = document.querySelector('.featDetail')
 detail.addEventListener('click', handleDetail)
 
-function handleDetail(){
+function handleDetail(e){
+    showRelevant(e.target.id[4]) //[4] is more concise based on naming schema, but this is essentially the same as taking the value at last index [e.target.id.length-1]
+    //flitting effect occurs when swapping srcs. Rather than using toggle, likely could remove previous src with a separate function for clicking on .featDetail.
     detail.classList.toggle('restore')
 }
 
@@ -39,28 +41,11 @@ const featureGallery = [
     {name:'Dark chocolate Guinness cookie', url:'https://i.postimg.cc/SRjbvBR2/levainstylecookies.jpg', desc:'Soft-centered, rich chocolate cookies large enough to share.'}
 ]
 
-// to refactor at some point
-const feat1 = document.querySelector('#feat1')
-const feat2 = document.querySelector('#feat2')
-const feat3 = document.querySelector('#feat3')
-const feat4 = document.querySelector('#feat4')
-const feat5 = document.querySelector('#feat5')
-const feat6 = document.querySelector('#feat6')
-const feat7 = document.querySelector('#feat7')
-const feat8 = document.querySelector('#feat8')
-
-feat1.addEventListener('click', function(){showRelevant(1)})
-feat2.addEventListener('click', function(){showRelevant(2)})
-feat3.addEventListener('click', function(){showRelevant(3)})
-feat4.addEventListener('click', function(){showRelevant(4)})
-feat5.addEventListener('click', function(){showRelevant(5)})
-feat6.addEventListener('click', function(){showRelevant(6)})
-feat7.addEventListener('click', function(){showRelevant(7)})
-feat8.addEventListener('click', function(){showRelevant(8)})
-
 function showRelevant(num){
-    detail.querySelector('img').src= featureGallery[num-1].url;
-    detail.querySelector('img').alt = featureGallery[num-1].name;
-    detail.querySelector('figcaption').textContent = `${featureGallery[num-1].name}: ${featureGallery[num-1].desc}`
-
+    // conditional gives flexibility so the 'undefined' resulting from clicking on .featDetail is ignored
+    if (num){
+        detail.querySelector('img').src= featureGallery[num-1].url;
+        detail.querySelector('img').alt = featureGallery[num-1].name;
+        detail.querySelector('figcaption').textContent = `${featureGallery[num-1].name}: ${featureGallery[num-1].desc}`
+    }
 }
