@@ -3,7 +3,7 @@ A responsive website for a cafe, built from scratch and including an order form 
 
 **Demo**: https://idyll-cafe.netlify.app/
 
-![cafe website preview](https://i.postimg.cc/mkW6HSP7/idyll-menu.gif)
+![cafe website preview](https://i.postimg.cc/cCKwdqxm/idyll-screens.png)
 
 ## How it's made
 **Tech used:** HTML, CSS, JavaScript.
