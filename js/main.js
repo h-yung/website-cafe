@@ -28,6 +28,7 @@ function handleDetail(e){
     showRelevant(e.target.id[4]) //[4] is more concise based on naming schema, but this is essentially the same as taking the value at last index [e.target.id.length-1]
     //flitting effect occurs when swapping srcs. Rather than using toggle, likely could remove previous src with a separate function for clicking on .featDetail.
     detail.classList.toggle('restore')
+    document.querySelector('.overlay').classList.toggle('restore-overlay')
 }
 
 const featureGallery = [

@@ -265,7 +265,9 @@ section.emph:hover {
 figcaption {
      /* font-family: serif;
      font-size: 1.2rem; */
+     color: white;
      font: italic 1.2rem serif;
+     text-align: center;
 }
 
 #hero section.emph {
@@ -370,11 +372,11 @@ figcaption {
 }
 
 .featDetail {
-     z-index: 1;
+     z-index: 4; /*over everything including nav bar*/
      display: none;
      position: absolute;
      right: -50rem;
-     width: 45rem; /*cover entire screen*/
+     width: 45rem; 
      min-height: 40rem;
      margin-right: 2rem;
      transition: opacity .35s, visibility .35s, height .35s;
@@ -754,11 +756,21 @@ section.seven {
 }
 
 .restore {
-     right: 0;
-     left:0;
-     margin:auto;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     /* negative half of height and width */
+     margin-top: -20rem;
+     margin-left: -22.5rem;
      display: inherit; /*work out a way to have element slide in without shift complications*/
 }
+
+.restore-overlay {
+     /* for .overlay */
+     visibility:visible;
+     opacity: 0.7;
+}
+
 
 @media screen and (max-width:1360px) and (min-width:1060px){
      .feat {
@@ -770,6 +782,15 @@ section.seven {
           margin: 0;
           position: fixed;
           top: 5%;
+     }
+     .restore {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          /* negative half of height and width */
+          margin-top: -25%;
+          margin-left: -30%;
+          display: inherit; /*work out a way to have element slide in without shift complications*/
      }
 }
 
@@ -820,6 +841,21 @@ section.seven {
 }
 
 @media screen and (max-width:1059px) and (min-width:829px){
+
+     /* for featDetail lightbox */
+     .featDetail {
+          width: 65%;
+     }
+     .restore {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          /* negative half of height and width */
+          margin-top: -28%;
+          margin-left: -32.5%;
+          display: inherit; /*work out a way to have element slide in without shift complications*/
+     }
+
      #hero.order + section {
           flex-direction: column;
      }
@@ -885,6 +921,19 @@ section.seven {
 }
 
 @media screen and (max-width:828px) and (min-width:481px){
+     /* for featDetail lightbox */
+     .featDetail {
+          width: 78%;
+     }
+     .restore {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          /* negative half of height and width */
+          margin-top: -28%;
+          margin-left: -39%;
+          display: inherit; /*work out a way to have element slide in without shift complications*/
+     }
 
      /* NEXT from here: REVIEWS change toggle to swipe action */
      /* center the controllers */
@@ -996,6 +1045,19 @@ section.seven {
           margin: 0;
           position: fixed;
           top: 20%;
+     }
+     /* for featDetail lightbox */
+     .featDetail {
+          width: 90%;
+     }
+     .restore {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          /* negative half of height and width */
+          margin-top: -40%;
+          margin-left: -45%;
+          display: inherit; /*work out a way to have element slide in without shift complications*/
      }
 
      #reviews {
