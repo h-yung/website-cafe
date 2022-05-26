@@ -76,7 +76,7 @@ a {
      text-transform: uppercase;
      border-radius: 2rem;
      border: 2px solid rgba(71, 65, 65, 0);
-     margin-bottom: 2rem;
+     margin-bottom: 1rem;
 }
 
 .cta.primary {
@@ -313,6 +313,7 @@ figcaption {
      width: 100%;
      flex-wrap: wrap;
      justify-content: center;
+     margin-top: 2rem;
 }
 
 .feat {
