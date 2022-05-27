@@ -412,35 +412,6 @@ figcaption {
      width: 100%;
      text-align: center;
 }
-/* 
-#reviews input {
-     display:none;
-}
-
-#reviews label {
-     display:initial;
-     font-size: 11rem;
-     line-height: 3rem;
-     margin-left: 1rem;
-     transition: all 0.3s ease-out 0s;
-}
-#reviews label:hover {
-     cursor: pointer;
-}
-
-#reviews #slide-1:checked + label,
-#reviews #slide-2:checked + label,
-#reviews #slide-3:checked + label {
-     color: rgba(71, 65, 65, 0.726);
-}
-
-#reviews label:first-of-type {
-     text-align: right;
-}
-#reviews label:last-of-type {
-     text-align: left;
-} */
-
 #reviews .clipper {
      /* flex container */
      /* contains the container with overflows - needs to start from left */
@@ -507,24 +478,6 @@ figcaption {
      font-size: smaller;
      color:rgba(71, 65, 65, 1);
 }
-
-
-
-
-
-#slide-2:checked  ~ .clipper .container {
-     margin-left: -90%;
-}
-#slide-3:checked  ~ .clipper .container {
-     margin-left: -180%;
-}
-
-
-
-
-
-
-
 
 
 
@@ -790,7 +743,7 @@ section.seven {
      /* negative half of height and width */
      margin-top: -20rem;
      margin-left: -22.5rem;
-     display: inherit; /*work out a way to have element slide in without shift complications*/
+     display: inherit; 
 }
 
 .restore-overlay {
@@ -818,54 +771,8 @@ section.seven {
           /* negative half of height and width */
           margin-top: -25%;
           margin-left: -30%;
-          display: inherit; /*work out a way to have element slide in without shift complications*/
+          display: inherit; 
      }
-}
-
-@media screen and (max-width:1220px) and (min-width:1058px){
-     /* center the controllers */
-     /* #reviews label {
-          margin-left: 0;
-     } */
-     /* #slide-1 + label {
-          text-align: right;
-          width: 42%;
-     }
-     #slide-2 + label {
-          text-align: center;
-          width: 10%;
-     }
-
-     #slide-3 + label {
-          text-align: left;
-          width: 42%;
-     }
-
-     #reviews {
-          height: 50rem;
-          overflow: hidden;
-     }
-
-     #reviews .clipper {
-          height: 100%;
-     }
-     
-     #reviews .container {
-          flex-direction: column;
-          align-items: center;
-     }
-     .review {
-          width: 80%;
-     }
-
-     #slide-2:checked  ~ .clipper .container {
-          margin-left: 0;
-          margin-top: -50%;
-     }
-     #slide-3:checked  ~ .clipper .container {
-          margin-left: 0;
-          margin-top: -100%;
-     } */
 }
 
 @media screen and (max-width:1059px) and (min-width:829px){
@@ -881,7 +788,7 @@ section.seven {
           /* negative half of height and width */
           margin-top: -28%;
           margin-left: -32.5%;
-          display: inherit; /*work out a way to have element slide in without shift complications*/
+          display: inherit; 
      }
 
      #hero.order + section {
@@ -900,52 +807,6 @@ section.seven {
      section.list li span:first-child {
           width: 50%;
      }
-
-     /* center the controllers */
-     /* #reviews label {
-          margin: 0;
-     }
-     #slide-1 + label {
-          text-align: right;
-          width: 41%;
-     }
-     #slide-2 + label {
-          text-align: center;
-          width: 10%;
-     }
-
-     #slide-3 + label {
-          text-align: left;
-          width: 41%;
-     }
-
-     #reviews {
-          height: 50rem;
-          padding: 2rem;
-          overflow: hidden;
-     }
-
-     #reviews .clipper {
-          height: 100%;
-     }
-     
-     #reviews .container {
-          flex-direction: column;
-          align-items: center;
-          margin: 0;
-     }
-     .review {
-          width: 100%;
-     }
-
-     #slide-2:checked  ~ .clipper .container {
-          margin-left: 0;
-          margin-top: -70%;
-     }
-     #slide-3:checked  ~ .clipper .container {
-          margin-left: 0;
-          margin-top: -140%;
-     } */
 }
 
 @media screen and (max-width:828px) and (min-width:481px){
@@ -960,7 +821,7 @@ section.seven {
           /* negative half of height and width */
           margin-top: -28%;
           margin-left: -39%;
-          display: inherit; /*work out a way to have element slide in without shift complications*/
+          display: inherit; 
      }
 
      /*REVIEWS change toggle to swipe action */
@@ -1092,7 +953,7 @@ section.seven {
           /* negative half of height and width */
           margin-top: -40%;
           margin-left: -45%;
-          display: inherit; /*work out a way to have element slide in without shift complications*/
+          display: inherit; 
      }
 
      #reviews {
