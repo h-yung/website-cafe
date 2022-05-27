@@ -412,7 +412,7 @@ figcaption {
      width: 100%;
      text-align: center;
 }
-
+/* 
 #reviews input {
      display:none;
 }
@@ -439,7 +439,7 @@ figcaption {
 }
 #reviews label:last-of-type {
      text-align: left;
-}
+} */
 
 #reviews .clipper {
      /* flex container */
@@ -447,42 +447,49 @@ figcaption {
      justify-content: flex-start;
      /* a flex item in flex-direction:row in wider screens - width below ensures its own row */
      width: 100%;
+     height: 36vh;
      overflow: hidden;
-}
+} 
 
 #reviews .container {
      /* flex container */
-     margin-left: 1rem;
-     transition: all 0.5s ease-out 0s;
-}
-
-
-/* #slide-1:checked  ~ .clipper .container {
-     margin-left: 0%;
-} */
-#slide-2:checked  ~ .clipper .container {
-     margin-left: -90%;
-}
-#slide-3:checked  ~ .clipper .container {
-     margin-left: -180%;
+     align-items: center;
+     overflow-y: hidden;
+     height: 40vh;
+     max-height: 40vh;
+     --n: 1;
+     width: 100%;
+     width: calc(var(--n)*100%);
+     /*the index of the currently selected image (--i)*/
+     /* Changing the --i to a different integer val i, where 0 <= i <= --n brings another image into view */
+     /* position the .container wrt the viewport via a translation (% values inside translate() functions are relative to the dimensions of the element we have set this transform on) */
+     transform: translate(calc(var(--i,0)/var(--n)*100%));
+     /* transition: transform 0.5s ease-out; */
 }
 
 
 /* indiv reviews styles */
 .review {
-     /* flex container */
-     align-items: center;
-     margin: 1rem;
+     min-width: 98%; /*apparently otherwise Firefox makes img shrink to fit*/
+     width: 98%; /*" can't take this out either as it breaks Chrome" ...*/
+     width: calc(100%/var(--n));
+     margin: 1%;
+
+     /* making it work for mouse*/
+     pointer-events: none;
+
      padding: 2rem;
      width: 30rem;
      border-radius: 1rem;
+     /* flex container */
+     align-items: center;
      background: white;
 }
 
 .profile {
      flex-direction: column;
      text-align: center;
-     margin-right: 2rem;
+     margin: 0 3rem;
 }
 .review img {
      border-radius: 50%;
@@ -500,6 +507,26 @@ figcaption {
      font-size: smaller;
      color:rgba(71, 65, 65, 1);
 }
+
+
+
+
+
+#slide-2:checked  ~ .clipper .container {
+     margin-left: -90%;
+}
+#slide-3:checked  ~ .clipper .container {
+     margin-left: -180%;
+}
+
+
+
+
+
+
+
+
+
 
 footer {
      /* flex container */
@@ -797,10 +824,10 @@ section.seven {
 
 @media screen and (max-width:1220px) and (min-width:1058px){
      /* center the controllers */
-     #reviews label {
+     /* #reviews label {
           margin-left: 0;
-     }
-     #slide-1 + label {
+     } */
+     /* #slide-1 + label {
           text-align: right;
           width: 42%;
      }
@@ -838,7 +865,7 @@ section.seven {
      #slide-3:checked  ~ .clipper .container {
           margin-left: 0;
           margin-top: -100%;
-     }
+     } */
 }
 
 @media screen and (max-width:1059px) and (min-width:829px){
@@ -875,7 +902,7 @@ section.seven {
      }
 
      /* center the controllers */
-     #reviews label {
+     /* #reviews label {
           margin: 0;
      }
      #slide-1 + label {
@@ -918,7 +945,7 @@ section.seven {
      #slide-3:checked  ~ .clipper .container {
           margin-left: 0;
           margin-top: -140%;
-     }
+     } */
 }
 
 @media screen and (max-width:828px) and (min-width:481px){
@@ -936,52 +963,59 @@ section.seven {
           display: inherit; /*work out a way to have element slide in without shift complications*/
      }
 
-     /* NEXT from here: REVIEWS change toggle to swipe action */
-     /* center the controllers */
-     #reviews label {
-          margin: 0;
-     }
-     #slide-1 + label {
-          text-align: right;
-          width: 40%;
-     }
-     #slide-2 + label {
-          text-align: center;
-          width: 10%;
-     }
-
-     #slide-3 + label {
-          text-align: left;
-          width: 40%;
-     }
-     #reviews {
-          height: 50rem;
-          padding: 2rem;
-          overflow: hidden;
-     }
-
+     /*REVIEWS change toggle to swipe action */
      #reviews .clipper {
-          height: 100%;
-     }
+          /* flex container */
+          /* contains the container with overflows - needs to start from left */
+          justify-content: flex-start;
+          /* a flex item in flex-direction:row in wider screens - width below ensures its own row */
+          width: 100%;
+          height: 53vh;
+          overflow: hidden;
+     } 
      
      #reviews .container {
-          flex-direction: column;
+          /* flex container */
           align-items: center;
-          margin: 0;
+          overflow-y: hidden;
+          height: 57vh;
+          max-height: 57vh;
+          --n: 1;
+          width: 100%;
+          width: calc(var(--n)*100%);
+          transform: translate(calc(var(--i,0)/var(--n)*100%));
+          /* transition: transform 0.5s ease-out; */
      }
      .review {
-          width: 100%;
+          min-width: 98%; /*apparently otherwise Firefox makes img shrink to fit*/
+          width: 98%; /*" can't take this out either as it breaks Chrome" ...*/
+          width: calc(100%/var(--n));
+          margin: 1%;
+     
+          /* making it work for mouse*/
+          pointer-events: none;
+          min-height: 45vh;
+          height: 45vh;
+          padding: 2rem;
+          width: 30rem;
+          border-radius: 1rem;
+          /* flex container */
+          flex-direction: column;
+          align-items: center;
+          background: white;
+     }
+     
+     .profile {
+          flex-direction: column;
+          margin: 0 1rem;
      }
 
-     #slide-2:checked  ~ .clipper .container {
-          margin-left: 0;
-          margin-top: -70%;
+     .profile + section {
+          text-align: center;
      }
-     #slide-3:checked  ~ .clipper .container {
-          margin-left: 0;
-          margin-top: -140%;
+     .profile + section p {
+          margin-top: 1rem;
      }
-
 }
 
 
@@ -1062,31 +1096,62 @@ section.seven {
      }
 
      #reviews {
-          padding: 2rem 1rem 8rem 1rem;
+          padding: 2rem;
      }
 
-     /* prior: REVIEWS change toggle to swipe action */
-     #slide-1 + label {
-          text-align: right;
-          width: 35%;
-     }
-     #slide-2 + label {
-          text-align: center;
-          width: 15%;
-     }
-
-     #slide-3 + label {
-          text-align: left;
-          width: 35%;
-     }
-
+     #reviews .clipper {
+          /* flex container */
+          /* contains the container with overflows - needs to start from left */
+          justify-content: flex-start;
+          /* a flex item in flex-direction:row in wider screens - width below ensures its own row */
+          width: 100%;
+          height: 57vh;
+          overflow: hidden;
+     } 
+     
      #reviews .container {
+          /* flex container */
+          align-items: center;
           margin: 0;
+          overflow-y: hidden;
+          height: 57vh;
+          max-height: 57vh;
+          --n: 1;
+          width: 100%;
+          width: calc(var(--n)*100%);
+          transform: translate(calc(var(--i,0)/var(--n)*100%));
+          /* transition: transform 0.5s ease-out; */
+     }
+     .review {
+          min-width: 94%; /*apparently otherwise Firefox makes img shrink to fit*/
+          width: 94%; /*" can't take this out either as it breaks Chrome" ...*/
+          width: calc(100%/var(--n));
+          margin: 3%;
+     
+          /* making it work for mouse*/
+          pointer-events: none;
+          min-height: 52vh;
+          height: 52vh;
+          padding: 2rem 1rem 8rem 1rem;
+          width: 90vw;
+          border-radius: 1rem;
+          /* flex container */
+          flex-direction: column;
+          align-items: center;
+          background: white;
+          
+     }
+     
+     .profile {
+          flex-direction: column;
+          margin: 0 1rem;
      }
 
-     .review {
-          flex-direction: column;
-          width: 80vw;
+     .profile + section {
+          text-align: center;
+     }
+     .profile + section p {
+          margin-top: 1rem;
      }
 
 

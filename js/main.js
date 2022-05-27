@@ -50,3 +50,50 @@ function showRelevant(num){
         detail.querySelector('figcaption').textContent = `${featureGallery[num-1].name}: ${featureGallery[num-1].desc}`
     }
 }
+
+// reviews
+const _C = document.querySelector('#reviews .container')
+const N = _C.children.length;
+
+_C.style.setProperty('--n', N)
+// so that variable --n in CSS is set to the total length the .container needs to be to fit all the children
+
+/* Overkill here
+// lock on 'touchstart'/'mousedown' = storing x coordinate into the following initial coordinate variable
+let x0 = null;
+function lock(e) {
+    x0 = unify(e).clientX
+}
+// The clientX read-only property of the MouseEvent interface provides the horizontal coordinate 
+// within the application's viewport at which the event occurred 
+// (as opposed to the coordinate within the page).
+
+_C.addEventListener('mousedown', lock, false)
+_C.addEventListener('touchstart', lock, false)
+
+_C.addEventListener('mouseup', move, false)
+_C.addEventListener('touchend', move, false)
+
+// this unifies the touch and click cases
+function unify(e){
+    return e.changedTouches ? e.changedTouches[0] : e
+}
+
+let i = 0; //but what changes i??
+function move(e) {
+    // check if lock() is done (else x0 wouldn't be defined) or if coordinate is 0
+    if (x0 || x0 === 0){
+        // read current x-coord, calculate difference between it and x0
+        let dx = unify(e).clientX - x0  //is it a positive or negative difference?
+        let s = Math.sign(dx);          // just the sign of the diff here
+        // determine what to do based on its sign and current index
+        if ((i > 0 || s < 0) && (i < N-1 || s > 0)){
+            _C.style.setProperty(`--i`, i -= s)
+            // if i is somehow greater than 0 or s is negative AND it's not the last item in the collection 
+            // (since i is zero indexed, have to check if less than children.length-1 OR diff is positive)
+            x0 = null; 
+        }
+
+    }
+}
+*/
