@@ -50,6 +50,10 @@ h1 {
      margin-bottom: 1.2em;
 }
 
+#hero h1 {
+     font-size: 2rem;
+}
+
 h2 {
      font-size: 2rem;
 }
@@ -278,14 +282,14 @@ figcaption {
      margin-bottom: 0.5rem;
 }
 
-#hero h2 {
+#hero h1 {
      font-size: 6rem;
      line-height: 0.7em;
      width: 50%;
      color: rgba(21, 19, 19, 0.658);
      transition: all 0.5s ease-out 0.1s;
 }
-#hero h2:hover {
+#hero h1:hover {
      letter-spacing: 0.2rem;
      color: white;
      opacity: 0;
@@ -523,28 +527,28 @@ ORDERS PAGE
      border-radius: 0;
 }
 
-section.list,
+main.list,
 #summary {
      /* flex container */
      flex-direction: column;
      padding: 2rem;
 }
 
-section.list h2,
+main.list h2,
 #summary h2 {
      margin-bottom: 1em;
 }
 
-section.list li {
+main.list li {
      /* flex container */
      padding: 0.5rem 0;
 }
 
-section.list select {
+main.list select {
      padding: 0.5rem 0;
 }
 
-section.list li:first-child {
+main.list li:first-child {
      font-weight: bold;
      font-size: normal;
      font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -552,18 +556,18 @@ section.list li:first-child {
 }
 
 /* item name alignment */
-section.list li > span:first-child {
+main.list li > span:first-child {
      margin-right: 3rem;
      width: 12rem;
 }
 
-section.list li > section {
+main.list li > section {
      /* flex container */
      justify-content: space-between;
      width: 10rem;
 }
 
-section.list li span:first-child section {
+main.list li span:first-child section {
      /* flex container */
      justify-content: flex-start;
      width: 8rem; /* width of second column */
@@ -794,17 +798,17 @@ section.seven {
      #hero.order + section {
           flex-direction: column;
      }
-     #hero.order + section section.list {
+     #hero.order + section main.list {
           width: 100%;
           font-size: larger;
      }
      #summary {
           min-height: 0;
      }
-     section.list li {
+     main.list li {
           justify-content: space-between;
      }
-     section.list li span:first-child {
+     main.list li span:first-child {
           width: 50%;
      }
 }
@@ -912,14 +916,14 @@ section.seven {
           height: 100%;
      }
 
-     #hero h2 {
+     #hero h1 {
           font-size: 4rem;
           width: 95%;
           height: 50%;
           margin: 4rem 1rem;
      }
 
-     #hero h2:hover {
+     #hero h1:hover {
           letter-spacing: normal;
           color: rgba(71, 65, 65, 1);
           opacity: 1;
@@ -1028,38 +1032,38 @@ section.seven {
           padding: 0;
      }
 
-     #hero.order + section section.list {
+     #hero.order + section main.list {
           padding: 1rem;
      }
 
-     section.list li:first-child span:last-child {
+     main.list li:first-child span:last-child {
           /* no room to view */
           display: none;
      }
-     section.list li:first-child {
+     main.list li:first-child {
           justify-content: space-between;
      }
 
-     section.list li > span:first-child {
+     main.list li > span:first-child {
           width: 100%;
      }
 
-     section.list li {
+     main.list li {
           padding: 1rem 0;
           font-size: larger;
      }
 
-     section.list li:active,
-     section.list li:hover {
+     main.list li:active,
+     main.list li:hover {
           background: hsla(24, 38%, 95%, 0.832);
      }
 
-     section.list li section {
+     main.list li section {
           flex-direction: column;
           align-items: center;
      }
 
-     section.list li section span:first-child {
+     main.list li section span:first-child {
           font-size: smaller;
      }
 
