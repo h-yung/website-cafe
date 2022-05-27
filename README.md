@@ -21,7 +21,7 @@ The order form is supported by JavaScript, which enables the following:
 In order of earliest to most recent updates:
 * Dropdown and slide-out menu design (with thanks to some online tutorials for the initial burger menu code without the slide-out effect).
 * Fully responsive, with unique behaviors for desktop vs. mobile around hover effects and the gallery page.
-* Centered the detailed view of new featured products that appears on click.
+* Centered lightbox for the detailed view of new featured products; appears/disappears on click.
 * Reviews carousel: Currently a simple clip-by-container approach. Assumes desktop visitors will understand to click/drag with mouse or swipe with touchpad, but may add controllers back in at some point.
 
 ## Optimizations/ on deck
