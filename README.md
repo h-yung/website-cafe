@@ -22,7 +22,7 @@ In order of earliest to most recent updates:
 * Dropdown and slide-out menu design (with thanks to some online tutorials for the initial burger menu code without the slide-out effect).
 * Fully responsive, with unique behaviors for desktop vs. mobile around hover effects and the gallery page.
 * Centered the detailed view of new featured products that appears on click.
-* Reviews carousel: 100% CSS, but not optimized yet for graceful handling of breakpoints nor for touchscreen (tablet and mobile). For now, the controllers are not fully responsive but deprioritized for the smaller screen sizes, given this intended update, but I question whether it can still be kept mostly CSS driven.
+* Reviews carousel: Currently a simple clip-by-container approach. Assumes desktop visitors will understand to click/drag with mouse or swipe with touchpad, but may add controllers back in at some point.
 
 ## Optimizations/ on deck
 * Explore further possibilities with CSS and reorganize some of the styles and classes (deciding betweeen a few methodologies)
@@ -30,9 +30,7 @@ In order of earliest to most recent updates:
 * Modularize the CSS styles and classes.
 * Get some customer feedback!
 * Predictive/semi-personalized promotions (especially in the confirmation screen post-payment processing) is probably overkill for this business but could be useful elsewhere for different products and services that would want to promote email newsletter signups, integrations for RSS feed, and events.
-* Next iteration of Reviews carousel: 
-  * Change to on-swipe behavior, TBD if that will remain 100% CSS. For now, the controllers are not fully responsive but deprioritized for the smaller screen sizes, given this intended update.
-  * Set up to dynamically create review elements. Consider review elements articles?
+* Set up reviews carousel to dynamically create review elements. Consider review elements articles?
 
 As always, refactoring to bring the code more in line with OOP principles and to reduce pageload time. 
 
