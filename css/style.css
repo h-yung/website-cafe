@@ -966,7 +966,7 @@ section.seven {
           justify-content: flex-start;
           /* a flex item in flex-direction:row in wider screens - width below ensures its own row */
           width: 100%;
-          height: 63vh;
+          height: 58vh;
           overflow: hidden;
      } 
      
