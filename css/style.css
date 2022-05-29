@@ -757,7 +757,7 @@ section.seven {
 }
 
 
-@media screen and (max-width:1360px) and (min-width:1060px){
+@media screen and (max-width:1360px){
      .feat {
           width: 45%;
      }
@@ -779,7 +779,7 @@ section.seven {
      }
 }
 
-@media screen and (max-width:1059px) and (min-width:829px){
+@media screen and (max-width:1059px){
 
      /* for featDetail lightbox */
      .featDetail {
@@ -813,7 +813,7 @@ section.seven {
      }
 }
 
-@media screen and (max-width:828px) and (min-width:481px){
+@media screen and (max-width:828px){
      /* for featDetail lightbox */
      .featDetail {
           width: 78%;
@@ -882,7 +882,6 @@ section.seven {
           margin-top: 1rem;
      }
 }
-
 
 @media screen and (max-width:480px){
 
@@ -965,13 +964,7 @@ section.seven {
      }
 
      #reviews .clipper {
-          /* flex container */
-          /* contains the container with overflows - needs to start from left */
-          justify-content: flex-start;
-          /* a flex item in flex-direction:row in wider screens - width below ensures its own row */
-          width: 100%;
           height: 58vh;
-          overflow: hidden;
      } 
      
      #reviews .container {
@@ -990,36 +983,12 @@ section.seven {
      .review {
           min-width: 94%; /*apparently otherwise Firefox makes img shrink to fit*/
           width: 94%; /*" can't take this out either as it breaks Chrome" ...*/
-          width: calc(100%/var(--n));
           margin: 3%;
-     
-          /* making it work for mouse*/
-          pointer-events: none;
           min-height: 57vh;
           height: 57vh;
           padding: 2rem 1rem 8rem 1rem;
           width: 90vw;
-          border-radius: 1rem;
-          /* flex container */
-          flex-direction: column;
-          align-items: center;
-          background: white;
-          
      }
-     
-     .profile {
-          flex-direction: column;
-          margin: 0 1rem;
-     }
-
-     .profile + section {
-          text-align: center;
-     }
-     .profile + section p {
-          margin-top: 1rem;
-     }
-
-
      footer {
           flex-direction: column;
           align-items: center;
