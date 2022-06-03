@@ -8,11 +8,10 @@ A responsive website for a cafe, built from scratch and including an order form 
 ## How it's made
 **Tech used:** HTML, CSS, JavaScript.
 
-I built this website from the ground up to be a lightweight, mostly static website taking advantage of what modern CSS can offer for enhancements.
+A responsive static website built from scratch that leans heavily on CSS for enhancements.
+While it is functionally static for now, it is structured so that elements can be dynamically created (from menu order form to featured 'new' items, but also could be applied towards 'new/featured' section and reviews). 
 
-While it is functionally static for now, it is structured so that elements can be dynamically created (from menu order form to featured 'new' items). 
-
-The order form is supported by JavaScript, which enables the following:
+Menu would be integrated into the order platform in practice. The existing order form is supported by JavaScript, which enables the following:
 * Dynamically generates the order menu based on product information (stored as an array of objects).
 * Calculates and presents an estimate of the total cost to the customer, which can be edited. The checkout option is enabled only after a nonzero selection is made.
 * Captures the customer selection in an array of objects that can then be passed for payment processing.
